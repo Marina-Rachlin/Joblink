@@ -51,7 +51,7 @@ export const AuthProvider = ({ children }) => {
     try {
       setLoading(true);
 
-      const res = await axios.post(`${API_URL}/api/register/`, {
+      const res = await axios.post(`${process.env.API_URL}/api/register/`, {
         first_name: firstName,
         last_name: lastName,
         email,
@@ -81,7 +81,7 @@ export const AuthProvider = ({ children }) => {
       setLoading(true);
 
       const res = await axios.put(
-        `${API_URL}/api/me/update/`,
+        `${process.env.API_URL}/api/me/update/`,
         {
           first_name: firstName,
           last_name: lastName,
@@ -116,7 +116,7 @@ export const AuthProvider = ({ children }) => {
       setLoading(true);
 
       const res = await axios.put(
-        `${API_URL}/api/upload/resume/`,
+        `${process.env.API_URL}/api/upload/resume/`,
         formData,
         {
           headers: {

@@ -4,8 +4,7 @@ import cookie from "cookie";
 export default async (req, res) => {
   if (req.method === "GET") {
     const cookies = cookie.parse(req.headers.cookie || "");
-
-    const access = cookies.access || false;
+    const access = cookies._vercel_jwt || false;
 
     if (!access) {
       return res.status(401).json({

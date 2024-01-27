@@ -26,7 +26,7 @@ export const AuthProvider = ({ children }) => {
     try {
       setLoading(true);
 
-      const res = await axios.post(`${API_URL}/api/login/`, {
+      const res = await axios.post("/api/auth/login", {
         username,
         password,
       });
@@ -165,7 +165,7 @@ export const AuthProvider = ({ children }) => {
   // Logout user
   const logout = async () => {
     try {
-      const res = await axios.post(`${API_URL}/api/auth/logout`);
+      const res = await axios.post("/api/auth/logout");
 
       if (res.data.success) {
         setIsAuthenticated(false);

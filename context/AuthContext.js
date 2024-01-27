@@ -52,7 +52,7 @@ export const AuthProvider = ({ children }) => {
     try {
       setLoading(true);
 
-      const res = await axios.post(`${process.env.API_URL}/api/register/`, {
+      const res = await axios.post('https://joblink-app-c9b1ba4e0b1c.herokuapp.com/api/register/', {
         first_name: firstName,
         last_name: lastName,
         email,

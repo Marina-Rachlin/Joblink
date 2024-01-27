@@ -26,7 +26,7 @@ export const AuthProvider = ({ children }) => {
     try {
       setLoading(true);
 
-      const res = await axios.post("/api/auth/login", {
+      const res = await axios.post(`${API_URL}/api/login/`, {
         username,
         password,
       });
@@ -81,7 +81,7 @@ export const AuthProvider = ({ children }) => {
       setLoading(true);
 
       const res = await axios.put(
-        `${process.env.API_URL}/api/me/update/`,
+        `${API_URL}/api/me/update/`,
         {
           first_name: firstName,
           last_name: lastName,
@@ -116,7 +116,7 @@ export const AuthProvider = ({ children }) => {
       setLoading(true);
 
       const res = await axios.put(
-        `${process.env.API_URL}/api/upload/resume/`,
+        `${API_URL}/api/upload/resume/`,
         formData,
         {
           headers: {
@@ -165,7 +165,7 @@ export const AuthProvider = ({ children }) => {
   // Logout user
   const logout = async () => {
     try {
-      const res = await axios.post("/api/auth/logout");
+      const res = await axios.post(`${API_URL}/api/auth/logout`);
 
       if (res.data.success) {
         setIsAuthenticated(false);

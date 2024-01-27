@@ -48,6 +48,7 @@ export const AuthProvider = ({ children }) => {
 
   // Register user
   const register = async ({ firstName, lastName, email, password }) => {
+    console.log('API URL:', process.env.API_URL)
     try {
       setLoading(true);
 

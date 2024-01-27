@@ -6,6 +6,7 @@ export default async (req, res) => {
     const { username, password } = req.body;
 
     try {
+      console.log(`trying to call  ${process.env.API_URL}/api/token/`)
       const response = await axios.post(
         `${process.env.API_URL}/api/token/`,
         {
@@ -18,6 +19,8 @@ export default async (req, res) => {
           },
         }
       );
+
+      console.log('response of login=>', response)
 
       if (response.data.access) {
         res.setHeader("Set-Cookie", [

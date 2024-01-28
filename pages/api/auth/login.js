@@ -2,6 +2,7 @@ import axios from "axios";
 import cookie from "cookie";
 
 export default async (req, res) => {
+  console.log(process.env.API_URL)
   if (req.method === "POST") {
     const { username, password } = req.body;
 

@@ -48,11 +48,11 @@ export const AuthProvider = ({ children }) => {
 
   // Register user
   const register = async ({ firstName, lastName, email, password }) => {
-    console.log('API URL:', process.env.API_URL)
+    console.log(process.env.API_URL)
     try {
       setLoading(true);
 
-      const res = await axios.post('https://joblink-app-c9b1ba4e0b1c.herokuapp.com/api/register/', {
+      const res = await axios.post(`${process.env.API_URL}/api/register/`, {
         first_name: firstName,
         last_name: lastName,
         email,

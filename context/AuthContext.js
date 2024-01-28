@@ -52,7 +52,7 @@ export const AuthProvider = ({ children }) => {
     try {
       setLoading(true);
 
-      const res = await axios.post(`${process.env.NEXT_API_URL}/api/register/`, {
+      const res = await axios.post(`${process.env.API_URL}/api/register/`, {
         first_name: firstName,
         last_name: lastName,
         email,
